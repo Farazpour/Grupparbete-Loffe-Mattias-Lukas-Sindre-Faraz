@@ -16,24 +16,12 @@ public abstract class Product {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(String productInfo) {
-        this.productInfo = productInfo;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public String examine(){

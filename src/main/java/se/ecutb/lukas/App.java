@@ -9,14 +9,20 @@ public class App
 {
     public static void main( String[] args )
     {
-        Scanner sc = new Scanner(System.in);
+
+
+
+       Scanner sc = new Scanner(System.in);
         boolean hejsan = true;
         ImplementVM implementation = new ImplementVM();
+
+        implementation.request(7);
+
 
         implementation.setProducts();
 
         String[] arr = implementation.getProducts();
-        for (int i=0; i<arr.length; i++){
+        for (int i=0; i<arr.length-1; i++){
             System.out.println(arr[i]);
              }
         System.out.println("");
@@ -48,7 +54,7 @@ public class App
         }
 
             //sätt in pengar
-
+        implementation.request(0);
 
         while (implementation.getBalance() > 0){
             System.out.println("Your balance is: "+implementation.getBalance());
