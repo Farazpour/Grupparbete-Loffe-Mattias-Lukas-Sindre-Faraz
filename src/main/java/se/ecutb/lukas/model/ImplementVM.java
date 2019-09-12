@@ -28,7 +28,9 @@ public class ImplementVM implements VendingMachine{
 
     @Override
     public int endSession() {
-        return 0;
+        System.out.println("You get " + balance + " back from the machine.");
+        balance = 0;
+        return balance;
     }
 
     @Override
