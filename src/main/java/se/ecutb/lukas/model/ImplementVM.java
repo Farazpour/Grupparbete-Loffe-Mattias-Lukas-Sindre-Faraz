@@ -2,11 +2,11 @@ package se.ecutb.lukas.model;
 
 public class ImplementVM implements VendingMachine{
     Product[] products = new Product[6];
+    int beforeDeposit = 0;
     int balance = 0;
 
     @Override
     public void addCurrency(int amount) {
-        int beforeDeposit = 0;
         int[] validMoney = new int[]{1, 5, 10, 20, 50, 100, 500, 1000};
         for (int i = 0; i < validMoney.length; i++) {
             if (amount == validMoney[i]) {
@@ -23,8 +23,6 @@ public class ImplementVM implements VendingMachine{
 
     @Override
     public Product request(int productNumber) {
-       String temparray[] = getProducts();
-        System.out.println("You chose: "+temparray[productNumber]);
         return products[productNumber];
     }
 
@@ -34,13 +32,13 @@ public class ImplementVM implements VendingMachine{
     }
 
     @Override
-    public String getDescription() {
-        return null;
+    public String getDescription(int productNumber) {
+        String[] temp = getProducts();
+        return temp[productNumber];
     }
 
     @Override
     public int getBalance() {
-
         return balance;
     }
 
