@@ -36,11 +36,11 @@ public abstract class Product {
         this.price = price;
     }
 
-    public String examine(int index){
+    public String examine(){
         return "Product: " + getName() + "\nPrice: " + getPrice() + "\nInfo: " + getProductInfo() + "\n";
     }
 
-    public String use(int index){
+    public String use(){
         return "You happily chew on the " + getName();
     }
 

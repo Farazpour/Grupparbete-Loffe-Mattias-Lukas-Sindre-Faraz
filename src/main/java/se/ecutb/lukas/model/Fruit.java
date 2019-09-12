@@ -6,7 +6,7 @@ public class Fruit extends Product{
     }
 
     @Override
-    public String use(int index){
+    public String use(){
         return "You eat the " + getName() + " because it's healthy.";
     }
 

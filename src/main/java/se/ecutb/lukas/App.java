@@ -22,7 +22,6 @@ public class App
         System.out.println("");
         //printa alternativen
 
-
         System.out.println("Add currency. Enter a number. 1, 5, 10, 20, 50, 100, 500, 1000");
         String temp = "";
         int currency = 0;
@@ -71,7 +70,7 @@ public class App
             implementation.request(productNumber);
             implementation.getDescription(productNumber);
             //getprice
-            
+
         }
         //välj en vara
 

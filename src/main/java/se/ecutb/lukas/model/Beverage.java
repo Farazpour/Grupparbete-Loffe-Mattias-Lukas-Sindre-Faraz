@@ -6,7 +6,7 @@ public class Beverage extends Product{
     }
 
     @Override
-    public String use(int index){
+    public String use(){
         return "You drink " + getName();
     }
     @Override

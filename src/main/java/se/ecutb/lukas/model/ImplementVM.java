@@ -2,6 +2,7 @@ package se.ecutb.lukas.model;
 
 public class ImplementVM implements VendingMachine{
     Product[] products = new Product[6];
+
     int beforeDeposit = 0;
     int balance = 0;
 
@@ -23,6 +24,11 @@ public class ImplementVM implements VendingMachine{
 
     @Override
     public Product request(int productNumber) {
+        if (balance >= products[productNumber].getPrice()){
+            System.out.println("You bought: "+products[productNumber]);
+        } else if (balance < products[productNumber].getPrice()){
+            System.out.println("You dont have enough money. ");
+        }  //try&catch?
         return products[productNumber];
     }
 
@@ -36,6 +42,7 @@ public class ImplementVM implements VendingMachine{
     @Override
     public String getDescription(int productNumber) {
         String[] temp = getProducts();
+        System.out.println(temp[productNumber]);
         return temp[productNumber];
     }
 
