@@ -1,33 +1,23 @@
 package se.ecutb.lukas;
 
 import se.ecutb.lukas.model.ImplementVM;
-import se.ecutb.lukas.model.Product;
-import se.ecutb.lukas.model.VendingMachine;
 import java.util.Scanner;
 
 public class App
 {
     public static void main( String[] args )
     {
-
-
-
        Scanner sc = new Scanner(System.in);
         boolean hejsan = true;
         ImplementVM implementation = new ImplementVM();
-
-        implementation.request(7);
-
-
         implementation.setProducts();
-
+        //Setup
         String[] arr = implementation.getProducts();
         for (int i=0; i<arr.length-1; i++){
             System.out.println(arr[i]);
              }
         System.out.println("");
         //printa alternativen
-
         System.out.println("Add currency. Enter a number. 1, 5, 10, 20, 50, 100, 500, 1000");
         String temp = "";
         int currency = 0;
@@ -52,36 +42,30 @@ public class App
                 break;
             }
         }
-
             //sätt in pengar
-        implementation.request(0);
-
         while (implementation.getBalance() > 0){
-            System.out.println("Your balance is: "+implementation.getBalance());
             System.out.println("Select a ware between 0-5 where 0 is Daim and 5 Omnipollo Noah Pecan Mud Cake");
-
+            System.out.println("\nPress Q to exit.\n");
             int productNumber = -1;
             while (hejsan){
                 temp = sc.nextLine();
+                if (temp.equalsIgnoreCase("q")){
+                        System.out.println("Exiting. Returning "+implementation.endSession()+"kr.");
+                        hejsan = false;
+                        break;
+                }
                 try{
                     productNumber = Integer.parseInt(temp);
                     String temparray[] = implementation.getProducts();
-
-                    System.out.println("You chose: "+temparray[productNumber]);
+                    implementation.request(productNumber);
                     break;
                 }catch (NumberFormatException e){
+                    if (!temp.equalsIgnoreCase("q"))
                     System.out.println("Not a number between 0-5.");
                 }
             }
-            implementation.request(productNumber);
-            implementation.getDescription(productNumber);
-            //getprice
-
+            System.out.println("Your balance is: "+implementation.getBalance());
         }
-        //välj en vara
-
-
-        //ge växel och avsluta eller avsluta utan växel
-
+        //välj vara/varor, skriv q för att avsluta.
     }
 }

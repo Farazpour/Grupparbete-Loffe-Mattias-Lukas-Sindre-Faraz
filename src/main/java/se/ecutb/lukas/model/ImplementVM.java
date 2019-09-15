@@ -2,7 +2,6 @@ package se.ecutb.lukas.model;
 
 public class ImplementVM implements VendingMachine{
     Product[] products = new Product[7];
-
     int beforeDeposit = 0;
     int balance = 0;
 
@@ -69,7 +68,6 @@ public class ImplementVM implements VendingMachine{
         returnProduct[6] = products[6].toString();
         return returnProduct;
     }
-
 
     @Override
     public void setProducts() {

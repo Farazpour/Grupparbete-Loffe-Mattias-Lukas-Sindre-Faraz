@@ -23,29 +23,6 @@ public class AppTest
         vendingMachine.addCurrency(20);
         Assert.assertEquals(21, vendingMachine.getBalance());
     }
-  /*  @Test
-    public void test_request_invalid(){
-        int productNumber = 7;
-        Product actual;
-        String expected = vendingMachine.getDescription(productNumber);
-      try {
-           actual = vendingMachine.request(productNumber);
-      }catch (ArrayIndexOutOfBoundsException e ){
-          System.out.println("Invalid input. Make another input.");
-            productNumber = 6;
-            actual = vendingMachine.request(productNumber);
-      }
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void test_reuest_valid(){
-        int productNumber = 2;
-        String actual = vendingMachine.getDescription(productNumber);
-        Product temp = vendingMachine.request(productNumber);
-        String expected = temp.toString();
-        Assert.assertEquals(expected, actual);
-    } */
 
     @Test
     public void test_get_balance(){

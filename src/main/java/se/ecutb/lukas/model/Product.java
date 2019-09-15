@@ -1,7 +1,6 @@
 package se.ecutb.lukas.model;
 
 public abstract class Product {
-
     public String name;
     public String productInfo;
     public int price;
