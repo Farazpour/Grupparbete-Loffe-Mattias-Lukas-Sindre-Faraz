@@ -56,7 +56,6 @@ public class App
                 }
                 try{
                     productNumber = Integer.parseInt(temp);
-                    String temparray[] = implementation.getProducts();
                     implementation.request(productNumber);
                     break;
                 }catch (NumberFormatException e){
